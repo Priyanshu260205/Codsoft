@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Rating Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h2>🎬 Predict Movie Rating</h2>
+
+        <form method="POST">
+            <!-- Year -->
+            <label for="year">Release Year</label>
+            <input type="number" name="year" id="year" placeholder="e.g., 2015" required>
+
+            <!-- Duration -->
+            <label for="duration">Duration (minutes)</label>
+            <input type="number" name="duration" id="duration" placeholder="e.g., 120" required>
+
+            <!-- Genre -->
+            <label for="genre">Genre</label>
+            <input type="text" name="genre" id="genre" placeholder="e.g., Action, Thriller" required>
+
+            <!-- Director -->
+            <label for="director">Director</label>
+            <input type="text" name="director" id="director" placeholder="e.g., Rohit Shetty" required>
+
+            <!-- Actor 1 -->
+            <label for="actor1">Actor 1</label>
+            <input type="text" name="actor1" id="actor1" placeholder="e.g., Ajay Devgn" required>
+
+            <!-- Actor 2 -->
+            <label for="actor2">Actor 2</label>
+            <input type="text" name="actor2" id="actor2" placeholder="e.g., Kareena Kapoor" required>
+
+            <!-- Actor 3 -->
+            <label for="actor3">Actor 3</label>
+            <input type="text" name="actor3" id="actor3" placeholder="e.g., Anupam Kher" required>
+
+            <!-- Submit -->
+            <button type="submit">🎯 Predict Rating</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                🎉 Predicted IMDb Rating: <strong>{{ prediction }}</strong>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
