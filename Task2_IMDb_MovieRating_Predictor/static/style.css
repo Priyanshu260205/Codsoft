@@ -1,0 +1,122 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #141e30, #2b6954);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Card Container */
+.container {
+    background-color: #ffffff;
+    max-width: 520px;
+    width: 100%;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 16px;
+    font-weight: 600;
+    color: #25544b;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="number"] {
+    margin-top: 6px;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #1f8572;
+    outline: none;
+}
+
+/* Predict Button */
+button {
+    margin-top: 25px;
+    padding: 13px;
+    background-color: #2da7c0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #20865f;
+}
+
+/* Prediction Result Styling */
+.result {
+    margin-top: 30px;
+    text-align: center;
+    padding: 15px;
+    background-color: #ecf9ff;
+    border-left: 6px solid #3498db;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #43a987;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
