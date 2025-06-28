@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Flower Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>Iris Flower Classifier 🌸</h2>
+        <form id="irisForm" action="/predict" method="post" novalidate>
+            <div class="input-box">
+                <label for="sepal_length">Sepal Length (cm)</label>
+                <input type="text" name="sepal_length" id="sepal_length" required>
+                <div class="error" id="error_sepal_length"></div>
+            </div>
+
+            <div class="input-box">
+                <label for="sepal_width">Sepal Width (cm)</label>
+                <input type="text" name="sepal_width" id="sepal_width" required>
+                <div class="error" id="error_sepal_width"></div>
+            </div>
+
+            <div class="input-box">
+                <label for="petal_length">Petal Length (cm)</label>
+                <input type="text" name="petal_length" id="petal_length" required>
+                <div class="error" id="error_petal_length"></div>
+            </div>
+
+            <div class="input-box">
+                <label for="petal_width">Petal Width (cm)</label>
+                <input type="text" name="petal_width" id="petal_width" required>
+                <div class="error" id="error_petal_width"></div>
+            </div>
+
+            <input type="submit" class="btn" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html
